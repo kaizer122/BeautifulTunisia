@@ -6,6 +6,7 @@ export const theme = createTheme({
   colors: {
     bgPrimary: palette.white,
     bgSecondary: palette.lightRed,
+    bgSecondaryDark: palette.darkRed,
     bgTertiary: palette.blue,
     bgTertiaryLight: palette.lightBlue,
     textDark: palette.darkBlue,
@@ -26,19 +27,22 @@ export const theme = createTheme({
     tablet: 768,
   },
   textVariants: {
+    defaults: {
+      fontFamily: "poppins-regular",
+    },
     header: {
       fontSize: ms(34, 0.4),
       lineHeight: ms(41, 0.4),
       color: "textDark",
     },
     headerBold: {
-      fontWeight: "bold",
+      fontFamily: "poppins-bold",
       fontSize: ms(34, 0.4),
       lineHeight: ms(41, 0.4),
       color: "textDark",
     },
     subheader: {
-      fontWeight: "semiBold",
+      fontFamily: "poppins-semibold",
       fontSize: ms(21, 0.4),
       lineHeight: ms(32, 0.4),
       color: "textDark",
@@ -49,14 +53,14 @@ export const theme = createTheme({
       color: "textDark",
     },
     bodyBold: {
+      fontFamily: "poppins-bold",
       fontSize: ms(16, 0.4),
-      fontWeight: "bold",
       lineHeight: ms(24, 0.4),
       color: "textDark",
     },
     buttonLabel: {
+      fontFamily: "poppins-bold",
       fontSize: ms(16, 0.4),
-      fontWeight: "bold",
       lineHeight: ms(24, 0.4),
       color: "white",
       textAlign: "center",

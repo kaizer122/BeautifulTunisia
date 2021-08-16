@@ -5,9 +5,7 @@ import { ITheme } from "../../theme";
 
 export function HomeIcon({ focused, ...rest }: SvgProps & { focused: boolean }) {
   const { colors } = useTheme<ITheme>();
-  React.useEffect(() => {
-    console.log(focused, "AAAAAAAAAAAAAAA");
-  }, [focused]);
+
   return (
     <Svg width="23" height="23" viewBox="0 0 23 25" fill={"none"} {...rest}>
       <Path

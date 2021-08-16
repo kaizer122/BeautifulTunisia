@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 89.126 89.131" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<radialGradient id="d" cx="105.23" cy="100.92" r="149" gradientTransform="matrix(.51824 0 0 .51824 260.12 -60.51)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#fff" stop-opacity=".23" offset="0"/>
+<stop stop-color="#fff" stop-opacity="0" offset="1"/>
+</radialGradient>
+<linearGradient id="e" x1="156.5" x2="156.5" y1="571.5" y2="190.5" gradientTransform="matrix(.30009 0 0 .30009 282.58 -37.949)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2dae00" offset="0"/>
+<stop stop-color="#2dae00" stop-opacity="0" offset="1"/>
+</linearGradient>
+<radialGradient id="c" cx="183.17" cy="19.924" r="44.547" gradientTransform="matrix(1.8371 -.13207 .053028 .73763 -16.505 -12.538)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#fff" offset="0"/>
+<stop stop-color="#fff" stop-opacity="0" offset="1"/>
+</radialGradient>
+</defs>
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:creator>
+<cc:Agent>
+<dc:title>Adrien Facélina</dc:title>
+</cc:Agent>
+</dc:creator>
+<cc:license rdf:resource="http://creativecommons.org/licenses/LGPL/2.1/"/>
+<dc:title/>
+</cc:Work>
+<cc:License rdf:about="http://creativecommons.org/licenses/LGPL/2.1/">
+<cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+<cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+<cc:requires rdf:resource="http://web.resource.org/cc/Notice"/>
+<cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+<cc:requires rdf:resource="http://web.resource.org/cc/ShareAlike"/>
+<cc:requires rdf:resource="http://web.resource.org/cc/SourceCode"/>
+</cc:License>
+</rdf:RDF>
+</metadata>
+<g transform="translate(-284.98 36.149)">
+<path d="m329.54-36.143c-24.612 0-44.563 19.951-44.563 44.563 0 24.612 19.951 44.563 44.563 44.563s44.563-19.951 44.563-44.563c0-24.612-19.951-44.563-44.563-44.563z" fill="#e70013"/>
+<circle transform="matrix(1.8745 0 0 1.8745 330.05 9.0165)" r="20" d="m 20,0 c 0,11.045695 -8.954305,20 -20,20 -11.045695,0 -20,-8.954305 -20,-20 0,-11.045695 8.954305,-20 20,-20 11.045695,0 20,8.954305 20,20 z" fill="#fff"/>
+<circle transform="matrix(1.8745 0 0 1.8745 330.05 9.0165)" r="15" d="M 15,0 C 15,8.2842712 8.2842712,15 0,15 -8.2842712,15 -15,8.2842712 -15,0 c 0,-8.2842712 6.7157288,-15 15,-15 8.2842712,0 15,6.7157288 15,15 z" fill="#e70013"/>
+<circle transform="matrix(1.8745 0 0 1.8745 330.05 9.0165)" cx="4" r="12" d="M 16,0 C 16,6.627417 10.627417,12 4,12 -2.627417,12 -8,6.627417 -8,0 c 0,-6.627417 5.372583,-12 12,-12 6.627417,0 12,5.372583 12,12 z" fill="#fff"/>
+<g id="a" transform="matrix(0 -16.871 16.871 0 337.55 9.0165)" fill="#e70013">
+<polyline id="b" transform="matrix(.95106 .30902 -.30902 .95106 0 -1)" points="0 0 0 1 0.5 1"/>
+<use transform="scale(-1,1)" width="120" height="80" xlink:href="#b"/>
+</g>
+<use transform="matrix(.30902 .95106 -.95106 .30902 241.82 -314.8)" width="120" height="80" fill="#e70013" xlink:href="#a"/>
+<use transform="matrix(.30902 -.95106 .95106 .30902 224.67 327.26)" width="120" height="80" fill="#e70013" xlink:href="#a"/>
+<use transform="matrix(-.80902 .58779 -.58779 -.80902 615.93 -182.1)" width="120" height="80" fill="#e70013" xlink:href="#a"/>
+<use transform="matrix(-.80902 -.58779 .58779 -.80902 605.33 214.72)" width="120" height="80" fill="#e70013" xlink:href="#a"/>
+<path d="m374.11 8.4145c0 24.612-19.952 44.563-44.563 44.563s-44.563-19.952-44.563-44.563c0-24.612 19.952-44.563 44.563-44.563s44.563 19.952 44.563 44.563z" fill="url(#e)" fill-rule="evenodd"/>
+<path d="m374.11 8.4145c0 24.612-19.952 44.563-44.563 44.563s-44.563-19.952-44.563-44.563c0-24.612 19.952-44.563 44.563-44.563s44.563 19.952 44.563 44.563z" fill="url(#d)" fill-rule="evenodd"/>
+<path d="m327.42-34.08c-20.241 0.51632-38.436 17.707-40.188 37.875 27.033-11.202 57.977-7.3774 84.812 2.25-0.77834-22.713-21.882-41.78-44.625-40.125z" fill="url(#c)"/>
+</g>
+</svg>

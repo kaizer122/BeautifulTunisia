@@ -12,8 +12,10 @@ export const theme = createTheme({
     textLight: palette.white,
     white: palette.white,
     black: palette.black,
+    transparent: palette.transparent,
   },
   spacing: {
+    xs: ms(4, 0.3),
     s: ms(8, 0.3),
     m: ms(16, 0.3),
     l: ms(24, 0.3),
@@ -26,13 +28,13 @@ export const theme = createTheme({
   textVariants: {
     header: {
       fontSize: ms(34, 0.4),
-      lineHeight: "120.1%",
+      lineHeight: ms(41, 0.4),
       color: "textDark",
     },
     headerBold: {
       fontWeight: "bold",
       fontSize: ms(34, 0.4),
-      lineHeight: "120.1%",
+      lineHeight: ms(41, 0.4),
       color: "textDark",
     },
     subheader: {
@@ -51,6 +53,13 @@ export const theme = createTheme({
       fontWeight: "bold",
       lineHeight: ms(24, 0.4),
       color: "textDark",
+    },
+    buttonLabel: {
+      fontSize: ms(16, 0.4),
+      fontWeight: "bold",
+      lineHeight: ms(24, 0.4),
+      color: "white",
+      textAlign: "center",
     },
   },
 });

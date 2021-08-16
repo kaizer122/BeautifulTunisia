@@ -13,9 +13,9 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@react-navigation/bottom-tabs": "^6.0.4",
-    "@react-navigation/native": "^6.0.2",
-    "@react-navigation/native-stack": "^6.0.5",
+    "@react-navigation/bottom-tabs": "^5.x",
+    "@react-navigation/native": "^5.x",
+    "@react-navigation/native-stack": "^5.x",
     "@shopify/restyle": "^1.4.0",
     "lottie-ios": "3.2.3",
     "lottie-react-native": "^4.0.3",

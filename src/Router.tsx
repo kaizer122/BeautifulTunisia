@@ -1,11 +1,14 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useTheme } from "@shopify/restyle";
 import React from "react";
 import { SafeAreaView, StatusBar, Text, View } from "react-native";
 // needed for react router
 import "react-native-gesture-handler";
+import { HeartIcon, HomeIcon, SearchIcon, TabBarIcon } from "./components/navigation";
 import { LoginScreen, OnBoardingScreen } from "./screens";
+import { ITheme } from "./theme";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -26,11 +29,52 @@ function Tab2() {
   );
 }
 
-function TabNav() {
+function Tab3() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Tab1" component={Tab1} options={{ headerShown: false }} />
-      <Tab.Screen name="Tab2" component={Tab2} options={{ headerShown: false }} />
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Tab3!</Text>
+    </View>
+  );
+}
+
+function TabNav() {
+  const { colors } = useTheme<ITheme>();
+  return (
+    <Tab.Navigator
+      tabBarOptions={{
+        showLabel: false,
+        style: {
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          elevation: 0,
+          backgroundColor: colors.white,
+          borderTopColor: "transparent",
+          height: 100,
+        },
+      }}>
+      <Tab.Screen
+        name="Tab1"
+        component={Tab1}
+        options={{
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} Icon={HomeIcon} />,
+        }}
+      />
+      <Tab.Screen
+        name="Tab2"
+        component={Tab2}
+        options={{
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} Icon={SearchIcon} />,
+        }}
+      />
+      <Tab.Screen
+        name="Tab3"
+        component={Tab3}
+        options={{
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} Icon={HeartIcon} />,
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -41,8 +85,12 @@ const Router = () => {
       <StatusBar barStyle="light-content" />
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Start" component={LoginScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Home" component={OnBoardingScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Auth" component={LoginScreen} options={{ headerShown: false }} />
+          <Stack.Screen
+            name="Onboarding"
+            component={OnBoardingScreen}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen name="Tabs" component={TabNav} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>

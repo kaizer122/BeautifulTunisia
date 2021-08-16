@@ -14,6 +14,8 @@ export const theme = createTheme({
     white: palette.white,
     black: palette.black,
     transparent: palette.transparent,
+    focusedIcon: palette.blue,
+    unfocusedIcon: palette.gray,
   },
   spacing: {
     xs: ms(4, 0.3),

@@ -49,7 +49,11 @@ export const LoginScreen = ({ navigation }: any) => {
         <Box flex={1} justifyContent="space-between" alignItems="center" marginTop="l">
           <Button label={"Sign In"} onPress={() => console.log("SIGN IN")} bg={"bgSecondary"} />
           <Button label={"Create an account"} onPress={() => console.log("SIGN IN")} />
-          <Button label={"Skip"} onPress={() => navigation.navigate("Home")} bg={"transparent"} />
+          <Button
+            label={"Skip"}
+            onPress={() => navigation.navigate("Onboarding")}
+            bg={"transparent"}
+          />
         </Box>
       </Box>
     </Box>

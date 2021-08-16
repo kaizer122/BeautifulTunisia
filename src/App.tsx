@@ -1,94 +1,78 @@
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import {
   SafeAreaView,
-  ScrollView,
   StatusBar,
-  StyleSheet,
   Text,
+  TouchableOpacity,
   useColorScheme,
   View,
 } from "react-native";
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from "react-native/Libraries/NewAppScreen";
+import "react-native-gesture-handler";
 
-const Section: React.FC<{
-  title: string;
-}> = ({ children, title }) => {
-  const isDarkMode = useColorScheme() === "dark";
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function HomeScreen({ navigation }: any) {
   return (
-    <View style={styles.sectionContainer}>
-      <Text style={[styles.sectionTitle, { color: isDarkMode ? Colors.white : Colors.black }]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View
+      style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#F55" }}>
+      <Text>Home Screen</Text>
+
+      <TouchableOpacity
+        onPress={() => {
+          console.log("hiiiiiiiiiiiiiiiiiiiiiii");
+          // eslint-disable-next-line
+          navigation.navigate("Home");
+        }}
+        style={{ padding: 20 }}>
+        <Text>Go to tabs</Text>
+      </TouchableOpacity>
     </View>
   );
-};
+}
+
+function Tab1() {
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Tab1!</Text>
+    </View>
+  );
+}
+
+function Tab2() {
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Tab2!</Text>
+    </View>
+  );
+}
+
+function TabNav() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Tab1" component={Tab1} options={{ headerShown: false }} />
+      <Tab.Screen name="Tab2" component={Tab2} options={{ headerShown: false }} />
+    </Tab.Navigator>
+  );
+}
 
 const App = () => {
-  const isDarkMode = useColorScheme() === "dark";
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  const isDarkMode = useColorScheme() === "light";
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
-      <ScrollView contentInsetAdjustmentBehavior="automatic" style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this screen and then come
-            back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">Read the docs to discover what to do next:</Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+    <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} backgroundColor="red" />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Start" component={HomeScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Home" component={TabNav} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: "600",
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: "400",
-  },
-  highlight: {
-    fontWeight: "700",
-  },
-});
 
 export default App;

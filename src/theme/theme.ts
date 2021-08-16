@@ -59,7 +59,7 @@ export const theme = createTheme({
       color: "textDark",
     },
     buttonLabel: {
-      fontFamily: "poppins-bold",
+      fontFamily: "poppins-semibold",
       fontSize: ms(16, 0.4),
       lineHeight: ms(24, 0.4),
       color: "white",

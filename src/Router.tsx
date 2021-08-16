@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
-import { SafeAreaView, StatusBar, Text, useColorScheme, View } from "react-native";
+import { SafeAreaView, StatusBar, Text, View } from "react-native";
 // needed for react router
 import "react-native-gesture-handler";
 import { LoginScreen, OnBoardingScreen } from "./screens";
@@ -36,11 +36,9 @@ function TabNav() {
 }
 
 const Router = () => {
-  const isDarkMode = useColorScheme() === "light";
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} backgroundColor="red" />
+      <StatusBar barStyle="light-content" />
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Start" component={LoginScreen} options={{ headerShown: false }} />

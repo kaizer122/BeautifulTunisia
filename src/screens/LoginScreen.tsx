@@ -47,8 +47,8 @@ export const LoginScreen = ({ navigation }: any) => {
           <Boats height="100%" width="100%" preserveAspectRatio="xMinYMin slice" />
         </Box>
         <Box flex={1} justifyContent="space-between" alignItems="center" marginTop="l">
-          <Button label={"SignIn"} onPress={() => console.log("SIGN IN")} />
-          <Button label={"SignUp"} onPress={() => console.log("SIGN IN")} bg={"bgSecondary"} />
+          <Button label={"Sign In"} onPress={() => console.log("SIGN IN")} bg={"bgSecondary"} />
+          <Button label={"Create an account"} onPress={() => console.log("SIGN IN")} />
           <Button label={"Skip"} onPress={() => navigation.navigate("Home")} bg={"transparent"} />
         </Box>
       </Box>

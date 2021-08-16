@@ -5,7 +5,7 @@ import React from "react";
 import { SafeAreaView, StatusBar, Text, useColorScheme, View } from "react-native";
 // needed for react router
 import "react-native-gesture-handler";
-import { LoginScreen } from "./screens";
+import { LoginScreen, OnBoardingScreen } from "./screens";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -44,7 +44,8 @@ const Router = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Start" component={LoginScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Home" component={TabNav} options={{ headerShown: false }} />
+          <Stack.Screen name="Home" component={OnBoardingScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Tabs" component={TabNav} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@shopify/restyle";
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import MainRouter from "./navigation/MainRouter";
+import { MainRouter } from "./navigation";
 import { theme } from "./theme";
 
 const App = () => {

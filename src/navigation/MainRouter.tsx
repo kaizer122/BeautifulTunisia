@@ -10,7 +10,7 @@ import { TabsRouter } from "./TabsRouter";
 
 const Stack = createNativeStackNavigator();
 
-const MainRouter = () => {
+export const MainRouter = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <StatusBar barStyle="light-content" />
@@ -29,5 +29,3 @@ const MainRouter = () => {
     </SafeAreaView>
   );
 };
-
-export default MainRouter;

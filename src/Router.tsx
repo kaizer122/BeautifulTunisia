@@ -7,19 +7,11 @@ import { SafeAreaView, StatusBar, Text, View } from "react-native";
 // needed for react router
 import "react-native-gesture-handler";
 import { HeartIcon, HomeIcon, SearchIcon, TabBarIcon } from "./components/navigation";
-import { LoginScreen, OnBoardingScreen } from "./screens";
+import { HomeScreen, LoginScreen, OnBoardingScreen } from "./screens";
 import { ITheme } from "./theme";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
-function Tab1() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Tab1!</Text>
-    </View>
-  );
-}
 
 function Tab2() {
   return (
@@ -51,12 +43,11 @@ function TabNav() {
           elevation: 0,
           backgroundColor: colors.white,
           borderTopColor: "transparent",
-          height: 100,
         },
       }}>
       <Tab.Screen
-        name="Tab1"
-        component={Tab1}
+        name="Home"
+        component={HomeScreen}
         options={{
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} Icon={HomeIcon} />,
         }}

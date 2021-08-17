@@ -1,16 +1,17 @@
 import { useTheme } from "@shopify/restyle";
 import AnimatedLottieView from "lottie-react-native";
 import React from "react";
-import { Image, StatusBar, StyleSheet } from "react-native";
+import { StatusBar, StyleSheet } from "react-native";
 import { ms, vs } from "react-native-size-matters";
 import { ArrowsRight } from "../assets/lottie";
 import { OnBoardingBot, OnBoardingTop } from "../assets/svg";
-import { Box, Text, TouchableOpacityBox } from "../components";
+import { Avatar, Box, Text, TouchableOpacityBox } from "../components";
 import { ITheme } from "../theme";
 
 export const OnBoardingScreen = ({ navigation }: any) => {
-  const theme = useTheme<ITheme>();
-  const { bgSecondaryDark } = theme.colors;
+  const {
+    colors: { bgSecondaryDark },
+  } = useTheme<ITheme>();
   return (
     <Box flex={1}>
       <StatusBar backgroundColor={bgSecondaryDark} />
@@ -32,15 +33,7 @@ export const OnBoardingScreen = ({ navigation }: any) => {
             <Text variant="header">Kais</Text>
             <Text variant="headerBold">Ladjemi</Text>
           </Box>
-          <Box borderRadius={ms(30)} borderColor="white" borderWidth={2}>
-            <Image
-              source={{
-                uri: "https://pickaface.net/gallery/avatar/66961165_171026_2019_co0p.png",
-              }}
-              resizeMode="contain"
-              style={styles.avatar}
-            />
-          </Box>
+          <Avatar />
         </Box>
         <Box>
           <Text variant="body" pb={"s"}>

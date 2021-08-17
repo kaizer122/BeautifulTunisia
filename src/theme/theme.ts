@@ -23,6 +23,7 @@ export const theme = createTheme({
     m: ms(16, 0.3),
     l: ms(24, 0.3),
     xl: ms(40, 0.3),
+    xxl: ms(60, 0.3),
   },
   breakpoints: {
     phone: 0,

@@ -14,8 +14,8 @@ export const TabBarIcon = ({
     {focused && (
       <Box
         position="absolute"
-        bottom={ms(-5)}
-        right={ms(-2)}
+        bottom={ms(-2)}
+        right={ms(1)}
         width={ms(15)}
         height={ms(15)}
         borderRadius={ms(15)}

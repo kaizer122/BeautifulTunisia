@@ -1,5 +1,6 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Dimensions, ImageBackground, StyleSheet } from "react-native";
+import { Dimensions, ImageBackground, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import { ms, s } from "react-native-size-matters";
 import Carousel from "react-native-snap-carousel";
 import { Box, Text } from "../common";
@@ -26,23 +27,28 @@ export const PlacesCarousel = ({ places }: Props) => {
   );
 };
 
-const CarouselItem = ({ item }: any) => (
-  <ImageBackground
-    key={item.id}
-    source={item.image}
-    resizeMode="cover"
-    style={styles.imageBg}
-    imageStyle={styles.image}>
-    <Box width="100%" height="95%" px="m" pt="m" borderRadius={ms(20)}>
-      <Text variant="bodyBold" color="textDark" mb={"xs"} numberOfLines={1}>
-        {item.name}
-      </Text>
-      <Text variant="body" numberOfLines={1} color="textDark">
-        {item.description}
-      </Text>
-    </Box>
-  </ImageBackground>
-);
+const CarouselItem = ({ item }: any) => {
+  const navigation = useNavigation();
+  return (
+    <TouchableWithoutFeedback onPress={() => navigation.navigate("Details", { place: item })}>
+      <ImageBackground
+        key={item.id}
+        source={item.image}
+        resizeMode="cover"
+        style={styles.imageBg}
+        imageStyle={styles.image}>
+        <Box width="100%" height="95%" px="m" pt="m" borderRadius={ms(20)}>
+          <Text variant="bodyBold" color="textDark" mb={"xs"} numberOfLines={1}>
+            {item.name}
+          </Text>
+          <Text variant="body" numberOfLines={1} color="textDark">
+            {item.description}
+          </Text>
+        </Box>
+      </ImageBackground>
+    </TouchableWithoutFeedback>
+  );
+};
 
 const styles = StyleSheet.create({
   imageBg: {

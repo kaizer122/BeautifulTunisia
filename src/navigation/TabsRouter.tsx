@@ -1,16 +1,13 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTheme } from "@shopify/restyle";
 import React from "react";
-import { SafeAreaView, StatusBar, Text, View } from "react-native";
+import { Text, View } from "react-native";
 // needed for react router
 import "react-native-gesture-handler";
-import { HeartIcon, HomeIcon, SearchIcon, TabBarIcon } from "./components/navigation";
-import { HomeScreen, LoginScreen, OnBoardingScreen } from "./screens";
-import { ITheme } from "./theme";
+import { HeartIcon, HomeIcon, SearchIcon, TabBarIcon } from "../components/navigation";
+import { HomeScreen } from "../screens";
+import { ITheme } from "../theme";
 
-const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function Tab2() {
@@ -29,7 +26,7 @@ function Tab3() {
   );
 }
 
-function TabNav() {
+export function TabsRouter() {
   const { colors } = useTheme<ITheme>();
   return (
     <Tab.Navigator
@@ -69,24 +66,3 @@ function TabNav() {
     </Tab.Navigator>
   );
 }
-
-const Router = () => {
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar barStyle="light-content" />
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Auth" component={LoginScreen} options={{ headerShown: false }} />
-          <Stack.Screen
-            name="Onboarding"
-            component={OnBoardingScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen name="Tabs" component={TabNav} options={{ headerShown: false }} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaView>
-  );
-};
-
-export default Router;

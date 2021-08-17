@@ -6,13 +6,14 @@ import { Text } from "../common";
 
 interface Props {
   regions: any[];
+  onRegionChange: (index: number) => void;
 }
 
 const { width, height } = Dimensions.get("window");
 export const REGION_ITEM_WIDTH = width / 3;
 export const REGION_ITEM_HEIGHT = height * 0.15;
 
-export const RegionsCarousel = ({ regions }: Props) => {
+export const RegionsCarousel = ({ regions, onRegionChange }: Props) => {
   return (
     <Box flex={0.5} mt="m">
       <Carousel
@@ -21,6 +22,7 @@ export const RegionsCarousel = ({ regions }: Props) => {
         sliderWidth={width}
         itemWidth={REGION_ITEM_WIDTH}
         firstItem={1}
+        onSnapToItem={(index) => onRegionChange(index)}
       />
     </Box>
   );

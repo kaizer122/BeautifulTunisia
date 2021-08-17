@@ -37,11 +37,17 @@ const CarouselItem = ({ item }: any) => {
         resizeMode="cover"
         style={styles.imageBg}
         imageStyle={styles.image}>
-        <Box width="100%" height="95%" px="m" pt="m" borderRadius={ms(20)}>
-          <Text variant="bodyBold" color="textDark" mb={"xs"} numberOfLines={1}>
+        <Box
+          width="100%"
+          height="95%"
+          px="m"
+          pb="m"
+          justifyContent="flex-end"
+          borderRadius={ms(20)}>
+          <Text variant="bodyBold" color="white" mb={"xs"} numberOfLines={1}>
             {item.name}
           </Text>
-          <Text variant="body" numberOfLines={1} color="textDark">
+          <Text variant="body" numberOfLines={1} color="white">
             {item.description}
           </Text>
         </Box>

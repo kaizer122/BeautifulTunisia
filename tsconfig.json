@@ -59,7 +59,7 @@
     "resolveJsonModule": true
   },
   "exclude": [
-    "node_modules", "babel.config.js", "metro.config.js", "jest.config.js"
+    "node_modules", "babel.config.js",  "jest.config.js"
   ],
-  "include": ["src", ".eslintrc.js","./index.js"]
+  "include": ["src", ".eslintrc.js","./index.js","metro.config.js",]
 }

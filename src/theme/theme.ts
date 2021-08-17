@@ -16,7 +16,9 @@ export const theme = createTheme({
     transparent: palette.transparent,
     focusedIcon: palette.blue,
     unfocusedIcon: palette.gray,
-    headerIconBg: palette.transparentBlack,
+    cardTransparent: palette.transparentBlack,
+    cardTransparent2: palette.transparentBlack2,
+    cardPrice: palette.lightGray,
   },
   spacing: {
     xs: ms(4, 0.3),
@@ -49,6 +51,10 @@ export const theme = createTheme({
       fontFamily: "poppins-semibold",
       fontSize: ms(21, 0.4),
       lineHeight: ms(32, 0.4),
+      color: "textDark",
+    },
+    tiny: {
+      fontSize: ms(10, 0.4),
       color: "textDark",
     },
     body: {

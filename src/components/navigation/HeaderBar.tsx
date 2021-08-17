@@ -8,11 +8,11 @@ import { Box, Text, TouchableOpacityBox } from "../common";
 
 interface Props {
   title: string;
-  right?: boolean;
+  showMenu?: boolean;
   onPressBack: () => void;
 }
 
-export const HeaderBar = ({ onPressBack, title, right, ...rest }: Props & BoxProps<ITheme>) => {
+export const HeaderBar = ({ onPressBack, title, showMenu, ...rest }: Props & BoxProps<ITheme>) => {
   const { colors } = useTheme<ITheme>();
   return (
     <Box flexDirection="row" padding="m" flex={1} {...rest}>
@@ -23,7 +23,7 @@ export const HeaderBar = ({ onPressBack, title, right, ...rest }: Props & BoxPro
           width={ms(50)}
           height={ms(50)}
           borderRadius={ms(25)}
-          bg={"headerIconBg"}
+          bg={"cardTransparent"}
           onPress={() => onPressBack()}>
           <Image
             source={require("../../assets/images/icons/leftArrow.png")}
@@ -34,7 +34,7 @@ export const HeaderBar = ({ onPressBack, title, right, ...rest }: Props & BoxPro
       </Box>
 
       <Box flex={1} alignItems="center" justifyContent="center">
-        <Text variant="subheader" color={"white"}>
+        <Text variant="bodyBold" color={"white"}>
           {title}
         </Text>
       </Box>
@@ -44,8 +44,8 @@ export const HeaderBar = ({ onPressBack, title, right, ...rest }: Props & BoxPro
         borderRadius={ms(50)}
         alignItems="center"
         justifyContent="center"
-        bg={right ? "headerIconBg" : undefined}>
-        {right && <HomeMenu />}
+        bg={showMenu ? "cardTransparent" : undefined}>
+        {showMenu && <HomeMenu />}
       </TouchableOpacityBox>
     </Box>
   );

@@ -22,7 +22,7 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    indent: ["error", 2, { SwitchCase: 1 }],
+    indent: "off",
     "linebreak-style": ["error", "unix"],
     quotes: ["error", "double", { avoidEscape: true }],
     semi: ["error", "always"],

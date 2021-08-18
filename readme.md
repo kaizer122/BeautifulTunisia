@@ -1,4 +1,4 @@
-# Beautiful Tunisia: [React Native](https://reactnative.dev/) example using [ Shopify's Restyle](https://innFactory.de)
+# Beautiful Tunisia: [React Native](https://reactnative.dev/) example using [ Shopify's Restyle](https://github.com/Shopify/restyle)
 
 An example travel App using restyle's type-enforced system !
 
@@ -7,7 +7,7 @@ An example travel App using restyle's type-enforced system !
 ## Install and run on android
 
 ```
-yarn add -g react-native-cli
+yarn global add react-native-cli
 yarn
 react-native link
 react-native run-android

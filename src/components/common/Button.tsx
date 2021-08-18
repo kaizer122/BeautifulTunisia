@@ -15,7 +15,6 @@ export const TouchableOpacityBox = createBox<
 type Props = React.ComponentProps<typeof TouchableOpacityBox> &
   ColorProps<ITheme> & {
     label: string;
-    color?: ColorProps<ITheme>;
   };
 
 export const Button = ({

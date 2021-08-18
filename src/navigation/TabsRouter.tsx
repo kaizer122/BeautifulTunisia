@@ -1,30 +1,15 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 // needed for react router
 import "react-native-gesture-handler";
 import { HeartIcon, HomeIcon, SearchIcon, TabBarIcon } from "../components/navigation";
 import { HomeScreen } from "../screens";
+import { UnderConstructionScreen } from "../screens/UnderConstructionScreen";
 import { theme } from "../theme";
 import { TabsParamList } from "../types";
 
 const Tab = createBottomTabNavigator<TabsParamList>();
-
-function Tab2() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Tab2!</Text>
-    </View>
-  );
-}
-
-function Tab3() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Tab3!</Text>
-    </View>
-  );
-}
 
 export function TabsRouter() {
   return (
@@ -43,14 +28,14 @@ export function TabsRouter() {
       />
       <Tab.Screen
         name="Tab2"
-        component={Tab2}
+        component={UnderConstructionScreen}
         options={{
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} Icon={SearchIcon} />,
         }}
       />
       <Tab.Screen
         name="Tab3"
-        component={Tab3}
+        component={UnderConstructionScreen}
         options={{
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} Icon={HeartIcon} />,
         }}

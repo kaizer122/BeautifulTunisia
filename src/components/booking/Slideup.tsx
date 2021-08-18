@@ -1,6 +1,6 @@
 import LottieView from "lottie-react-native";
 import React, { useEffect, useRef, useState } from "react";
-import { Animated, Dimensions, Image } from "react-native";
+import { Animated, Dimensions, Image, StyleSheet } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import SlidingUpPanel from "rn-sliding-up-panel";
 import { Box, Button, HeaderBar, Text } from "..";
@@ -53,13 +53,13 @@ export const Slideup = ({ place }: Props) => {
               autoPlay
               loop
               speed={0.7}
-              style={{ height: rms(80), marginTop: rms(15) }}
+              style={styles.swipeUpAnim}
             />
           )}
         </Box>
         <Box flex={1} bg={"bgPrimary"} alignItems="center" justifyContent="center">
           <MapView
-            style={{ width: "100%", height: "100%" }}
+            style={styles.mapview}
             provider={PROVIDER_GOOGLE}
             initialRegion={place.mapInitialRegion}
             customMapStyle={mapStyle}>
@@ -79,7 +79,7 @@ export const Slideup = ({ place }: Props) => {
                       ? require("../../assets/images/icons/bedOff.png")
                       : require("../../assets/images/icons/bedOn.png")
                   }
-                  style={{ width: 50, height: 50 }}
+                  style={styles.markerImg}
                 />
               </Marker>
             ))}
@@ -88,7 +88,7 @@ export const Slideup = ({ place }: Props) => {
             title={selectedHotel?.name || ""}
             onPressBack={() => panel.hide()}
             position="absolute"
-            top={20}
+            top={rms(20)}
           />
           {selectedHotel && (
             <Box position="absolute" bottom={rms(30)} left={0} right={0} p={"m"}>
@@ -101,17 +101,7 @@ export const Slideup = ({ place }: Props) => {
                 borderRadius={15}
                 bg="cardTransparent2"
                 height={rms(140)}>
-                <Image
-                  source={selectedHotel.image}
-                  resizeMode="cover"
-                  style={{
-                    width: rms(150),
-                    height: "100%",
-                    borderRadius: 15,
-                    borderBottomRightRadius: 0,
-                    borderTopRightRadius: 0,
-                  }}
-                />
+                <Image source={selectedHotel.image} resizeMode="cover" style={styles.hotelImg} />
                 <Box flex={1} ml={"m"} p="xs" justifyContent="space-around">
                   <Box>
                     <Text variant="bodyBold" color="white">
@@ -153,3 +143,16 @@ export const Slideup = ({ place }: Props) => {
     </SlidingUpPanel>
   );
 };
+
+const styles = StyleSheet.create({
+  slideupAnim: { height: rms(80), marginTop: rms(15) },
+  mapview: { width: "100%", height: "100%" },
+  markerImg: { width: rms(50), height: rms(50) },
+  hotelImg: {
+    width: rms(150),
+    height: "100%",
+    borderRadius: 15,
+    borderBottomRightRadius: 0,
+    borderTopRightRadius: 0,
+  },
+});

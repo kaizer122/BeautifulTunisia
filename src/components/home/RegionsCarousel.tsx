@@ -2,10 +2,11 @@ import React from "react";
 import { Dimensions, Image, StyleSheet } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import { Box } from "..";
+import { Region, Regions } from "../../types";
 import { Text } from "../common";
 
 interface Props {
-  regions: any[];
+  regions: Regions;
   onRegionChange: (index: number) => void;
 }
 
@@ -18,7 +19,7 @@ export const RegionsCarousel = ({ regions, onRegionChange }: Props) => {
     <Box flex={0.5} mt="m">
       <Carousel
         data={regions}
-        renderItem={({ item }: any) => <RegionCarouselItem item={item} />}
+        renderItem={({ item }) => <RegionCarouselItem item={item} />}
         sliderWidth={width}
         itemWidth={REGION_ITEM_WIDTH}
         firstItem={1}
@@ -28,7 +29,7 @@ export const RegionsCarousel = ({ regions, onRegionChange }: Props) => {
   );
 };
 
-const RegionCarouselItem = ({ item }: { item: any }) => {
+const RegionCarouselItem = ({ item }: { item: Region }) => {
   return (
     <Box flex={1} key={item.id} alignItems="center" justifyContent="center">
       <Box flex={2}>

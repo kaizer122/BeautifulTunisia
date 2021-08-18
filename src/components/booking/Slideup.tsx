@@ -6,17 +6,18 @@ import SlidingUpPanel from "rn-sliding-up-panel";
 import { Box, Button, HeaderBar, Text } from "..";
 import { SwipeUpAnim } from "../../assets/lottie";
 import { mapStyle } from "../../assets/mapStyle";
+import { Hotel, Place } from "../../types";
 import { rms } from "../../utils";
 
 const { height } = Dimensions.get("window");
 
 interface Props {
-  place: any;
+  place: Place;
 }
 
 export const Slideup = ({ place }: Props) => {
-  let panel = useRef(null).current;
-  const [selectedHotel, setSelectedHotel] = useState<any | undefined>();
+  let panel = useRef<SlidingUpPanel | null>(null).current;
+  const [selectedHotel, setSelectedHotel] = useState<Hotel>();
   const [allowDragging, setAllowDragging] = useState<boolean>(true);
   const draggedValue = new Animated.Value(rms(120));
 
@@ -53,7 +54,7 @@ export const Slideup = ({ place }: Props) => {
               autoPlay
               loop
               speed={0.7}
-              style={styles.swipeUpAnim}
+              style={styles.slideUp}
             />
           )}
         </Box>
@@ -86,7 +87,7 @@ export const Slideup = ({ place }: Props) => {
           </MapView>
           <HeaderBar
             title={selectedHotel?.name || ""}
-            onPressBack={() => panel.hide()}
+            onPressBack={() => panel?.hide()}
             position="absolute"
             top={rms(20)}
           />
@@ -145,7 +146,7 @@ export const Slideup = ({ place }: Props) => {
 };
 
 const styles = StyleSheet.create({
-  slideupAnim: { height: rms(80), marginTop: rms(15) },
+  slideUp: { height: rms(80), marginTop: rms(15) },
   mapview: { width: "100%", height: "100%" },
   markerImg: { width: rms(50), height: rms(50) },
   hotelImg: {

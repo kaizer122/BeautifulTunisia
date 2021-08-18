@@ -7,8 +7,9 @@ import { ArrowsRight } from "../assets/lottie";
 import { OnBoardingBot, OnBoardingTop } from "../assets/svg";
 import { Avatar, Box, Text, TouchableOpacityBox } from "../components";
 import { ITheme } from "../theme";
+import { MainStackNavProps } from "../types";
 
-export const OnBoardingScreen = ({ navigation }: any) => {
+export const OnBoardingScreen = ({ navigation }: MainStackNavProps<"Onboarding">) => {
   const {
     colors: { bgSecondaryDark },
   } = useTheme<ITheme>();

@@ -1,15 +1,12 @@
-import { useNavigation, useRoute } from "@react-navigation/native";
 import React from "react";
 import { Image, ImageBackground, StyleSheet } from "react-native";
 import { ms, mvs } from "react-native-size-matters";
 import { Box, HeaderBar, Slideup, Text, TouchableOpacityBox } from "../components";
+import { MainStackNavProps } from "../types";
 import { rms } from "../utils";
 
-export const DetailScreen = () => {
-  const {
-    params: { place },
-  } = useRoute<any>();
-  const navigation = useNavigation();
+export const DetailsScreen = ({ navigation, route }: MainStackNavProps<"Details">) => {
+  const { place } = route.params;
 
   return (
     <Box flex={1} justifyContent="center" alignItems="center">

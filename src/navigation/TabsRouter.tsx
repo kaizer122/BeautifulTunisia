@@ -1,14 +1,14 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { useTheme } from "@shopify/restyle";
 import React from "react";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 // needed for react router
 import "react-native-gesture-handler";
 import { HeartIcon, HomeIcon, SearchIcon, TabBarIcon } from "../components/navigation";
 import { HomeScreen } from "../screens";
-import { ITheme } from "../theme";
+import { theme } from "../theme";
+import { TabsParamList } from "../types";
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<TabsParamList>();
 
 function Tab2() {
   return (
@@ -27,20 +27,12 @@ function Tab3() {
 }
 
 export function TabsRouter() {
-  const { colors } = useTheme<ITheme>();
   return (
     <Tab.Navigator
+      initialRouteName="Home"
       tabBarOptions={{
         showLabel: false,
-        style: {
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          elevation: 0,
-          backgroundColor: colors.white,
-          borderTopColor: "transparent",
-        },
+        style: styles.tabbar,
       }}>
       <Tab.Screen
         name="Home"
@@ -66,3 +58,15 @@ export function TabsRouter() {
     </Tab.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  tabbar: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    elevation: 0,
+    backgroundColor: theme.colors.white,
+    borderTopColor: "transparent",
+  },
+});

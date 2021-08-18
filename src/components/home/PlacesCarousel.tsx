@@ -3,10 +3,11 @@ import React from "react";
 import { Dimensions, ImageBackground, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import { ms, s } from "react-native-size-matters";
 import Carousel from "react-native-snap-carousel";
+import { MainStackNav, Place, Places } from "../../types";
 import { Box, Text } from "../common";
 
 interface Props {
-  places: any[];
+  places: Places;
 }
 const { width, height } = Dimensions.get("window");
 
@@ -18,7 +19,7 @@ export const PlacesCarousel = ({ places }: Props) => {
     <Box flex={2.5} marginVertical="l">
       <Carousel
         data={places}
-        renderItem={({ item }: any) => <CarouselItem item={item} />}
+        renderItem={({ item }) => <CarouselItem item={item} />}
         sliderWidth={width}
         itemWidth={CAROUSEL_ITEM_WIDTH}
         firstItem={1}
@@ -27,8 +28,8 @@ export const PlacesCarousel = ({ places }: Props) => {
   );
 };
 
-const CarouselItem = ({ item }: any) => {
-  const navigation = useNavigation();
+const CarouselItem = ({ item }: { item: Place }) => {
+  const navigation = useNavigation<MainStackNav<"Tabs">>();
   return (
     <TouchableWithoutFeedback onPress={() => navigation.navigate("Details", { place: item })}>
       <ImageBackground

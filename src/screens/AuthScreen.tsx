@@ -7,8 +7,9 @@ import { BirdsAnim, TreeAnim } from "../assets/lottie";
 import { Boats, Sun, TunsiaLogo } from "../assets/svg";
 import { Box, Button, Text } from "../components";
 import { ITheme } from "../theme";
+import { MainStackNavProps } from "../types";
 
-export const LoginScreen = ({ navigation }: any) => {
+export const AuthScreen = ({ navigation }: MainStackNavProps<"Auth">) => {
   const theme = useTheme<ITheme>();
   const { bgSecondary } = theme.colors;
   return (
